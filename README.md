@@ -1,6 +1,6 @@
-# 🚀 Laboratorio Universitario - Unidad 2: Arquitectura y Patrones de Diseño de APIs
+# Unidad 2: Arquitectura y Patrones de Diseño de APIs
 
-Este repositorio contiene la infraestructura de software base (CRUD de Gestión de Personal) diseñada para la aplicación práctica de patrones empresariales en la **Maestría en Ingeniería de Software**. 
+Este repositorio contiene la infraestructura de software base (CRUD de Gestión de Personal) diseñada para la aplicación práctica de patrones empresariales en la **Maestría de Software**. 
 
 El objetivo fundamental de este laboratorio es que el maestrante identifique, evalúe y erradique la **deuda técnica intencional** insertada en el código base, transformando un sistema acoplado y mutable en una arquitectura desacoplada, reactiva, blindada y eficiente bajo los atributos de calidad del estándar **ISO/IEC 25010**.
 
