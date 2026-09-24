@@ -1,18 +1,22 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { connectDatabase } from './config/database';
+import { connectDatabase } from './config/database.js';
+import empleadosRouter from './routes/empleados.routes.js';
+import { errorMiddleware } from './middlewares/error.middleware.js';
 
+const app = express();
+const port = 3000;
 
- 
-const app=express(); 
-const port = 3000 
-connectDatabase(); // Conexión a la base de datos
+connectDatabase();
+
 app.use(morgan('dev'));
- 
 app.use(express.json());
-app.use(cors()); 
+app.use(cors());
+app.use('/api/v1', empleadosRouter);
 
-app.listen(port, ()=>{ 
-    console.log('Servidor escuchando en el puerto ' + port); 
-})
+app.use(errorMiddleware);
+
+app.listen(port, () => {
+  console.log('Servidor escuchando en el puerto ' + port);
+});
