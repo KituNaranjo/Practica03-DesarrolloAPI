@@ -1,0 +1,13 @@
+<h1>Gestión de Empleados</h1>
+
+<app-employee-form
+  [employeeToEdit]="employeeToEdit"
+  (save)="handleSave($event)"
+  (cancelEdit)="handleCancelEdit()"
+></app-employee-form>
+
+<app-employee-table
+  [employees]="(employees$ | async) ?? []"
+  (editRequested)="handleEditRequested($event)"
+  (deleteRequested)="handleDeleteRequested($event)"
+></app-employee-table>

@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h3>{{ employeeToEdit ? 'Editar empleado' : 'Nuevo empleado' }}</h3>
+
+  <label>
+    Nombre
+    <input type="text" formControlName="nombre" />
+  </label>
+
+  <label>
+    Cargo
+    <input type="text" formControlName="cargo" />
+  </label>
+
+  <label>
+    Departamento
+    <input type="text" formControlName="departamento" />
+  </label>
+
+  <label>
+    Sueldo
+    <input type="number" formControlName="sueldo" />
+  </label>
+
+  <div class="actions">
+    <button type="submit">{{ employeeToEdit ? 'Actualizar' : 'Crear' }}</button>
+    @if (employeeToEdit) {
+      <button type="button" (click)="onCancel()">Cancelar</button>
+    }
+  </div>
+</form>

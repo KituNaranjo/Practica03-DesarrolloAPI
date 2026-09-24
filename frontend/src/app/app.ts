@@ -1,19 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { EmployeeService } from './services/employee';
+import { Component } from '@angular/core';
+import { EmployeeManagerComponent } from './components/employee-manager/employee-manager';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [EmployeeManagerComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App implements OnInit {
-  private employeeService = inject(EmployeeService);
-  employees$ = this.employeeService.employees$;
-
-  ngOnInit(): void {
-    this.employeeService.loadAll();
-  }
-}
+export class App {}
